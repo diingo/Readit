@@ -24,6 +24,10 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'haml'
+
+gem 'quiet_assets'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
