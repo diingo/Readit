@@ -2,6 +2,9 @@
 
 = link_to "Add a link", new_link_path 
 
+
 - @links.each do |link| 
   %ul
     %li= link_to link.title, link.url
+
+= will_paginate @links
