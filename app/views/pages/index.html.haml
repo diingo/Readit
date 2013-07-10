@@ -6,5 +6,6 @@
 - @links.each do |link| 
   %ul
     %li= link_to link.title, link.url
+    %li= link_to "comments", link
 
 = will_paginate @links
