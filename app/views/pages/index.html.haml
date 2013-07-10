@@ -1,3 +1,7 @@
 %h2 I AMA Homepage
 
 = link_to "Add a link", new_link_path 
+
+- @links.each do |link| 
+  %ul
+    %li= link_to link.title, link.url
