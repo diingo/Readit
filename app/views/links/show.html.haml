@@ -4,7 +4,7 @@
 %h3= link_to @link.url, "#{@link.url}"
 
 
-= form_for(@comment) do |f|
+= form_for [@link, @comment] do |f|
   - if @comment.errors.any?
     #error_explanation
       %h2= pluralize(@comment.errors.count, "error") + "prohibited this comment from being saved:"
@@ -14,12 +14,14 @@
           %li= msg
 
   .field
-    = f.label :title
+    = f.label :message
     %br
-    = f.text_field :title
-  .field
-    = f.label :url
-    %br
-    = f.text_field :url
+    = f.text_area :message, :placeholder => "Add a comment"
   
   .actions= f.submit
+
+
+%h2 Comments:
+%div
+  - @link.comments.each do |comment|
+    %p= comment.message
